@@ -1,6 +1,14 @@
-# React + TypeScript + Vite
+# OctoFit Tracker frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+The React 19 presentation tier uses Vite and React Router. Start it from the workspace root with `npm run dev --prefix octofit-tracker/frontend`.
+
+In Codespaces, API requests use `https://${VITE_CODESPACE_NAME}-8000.app.github.dev/api`. Define `VITE_CODESPACE_NAME` in `octofit-tracker/frontend/.env.local`, for example:
+
+```dotenv
+VITE_CODESPACE_NAME=your-codespace-name
+```
+
+Restart Vite after changing `.env.local`. If the variable is unset, requests safely fall back to `http://localhost:8000/api` for local development.
 
 Currently, two official plugins are available:
 
