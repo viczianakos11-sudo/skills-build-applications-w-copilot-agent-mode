@@ -1,7 +1,7 @@
 import { useCollection } from './useCollection.js';
 
-export default function CollectionView({ title, eyebrow, description, resource, columns }) {
-  const { items, loading, error } = useCollection(resource);
+export default function CollectionView({ title, eyebrow, description, endpoint, columns }) {
+  const { items, loading, error } = useCollection(endpoint);
 
   return (
     <section className="collection-page" aria-labelledby="page-title">
@@ -31,7 +31,7 @@ export default function CollectionView({ title, eyebrow, description, resource, 
               </thead>
               <tbody>
                 {items.map((item, index) => (
-                  <tr key={item._id || item.id || `${resource}-${index}`}>
+                  <tr key={item._id || item.id || `${endpoint}-${index}`}>
                     {columns.map((column) => (
                       <td key={column.key}>{column.render ? column.render(item, index) : item[column.key] || '—'}</td>
                     ))}
